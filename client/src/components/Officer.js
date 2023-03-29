@@ -30,6 +30,6 @@ function Officer({officer}) {
             </p>
         </div>
     );
-}
+};
 
 export default Officer;
