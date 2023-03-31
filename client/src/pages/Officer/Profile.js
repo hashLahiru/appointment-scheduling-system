@@ -80,7 +80,7 @@ function Profile() {
         <Layout>
             <h1 className="page-title"> Officer Profile</h1>
             <hr />
-            {officer && <OfficerForm onFinish={onFinish} initialValues={doctor} />}
+            {officer && <OfficerForm onFinish={onFinish} initialValues={officer} />}
         </Layout>
     );
 }
