@@ -1,4 +1,3 @@
-import { Button, Col, Form, Input, Row, TimePicker } from "antd";
 import React from "react";
 import Layout from "../components/Layout";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,7 +9,7 @@ import OfficerForm from './../components/OfficerForm';
 import moment from "moment";
 
 function ApplyOfficer() {
-    const dipatch = useDispatch();
+    const dispatch = useDispatch();
     const { user } = useSelector((state) => state.user);
     const navigate = useNavigate();
     const onFinish = async (values) => {
