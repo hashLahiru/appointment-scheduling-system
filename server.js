@@ -6,7 +6,7 @@ const dbConfig = require("./config/dbConfig");
 app.use(express.json());
 const userRoute = require("./routes/userRoute");
 const adminRoute = require("./routes/adminRoute");
-const officerRoute = require("./routes/officerRoute");
+const officerRoute = require("./routes/officersRoute");
 const path = require("path");
 
 app.use("/api/user", userRoute);

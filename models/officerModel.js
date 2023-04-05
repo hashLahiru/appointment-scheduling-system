@@ -51,5 +51,5 @@ const officerSchema = new mongoose.Schema(
     }
 );
 
-const OfficerModel = mongoose.model("officers", officerSchema);
+const officerModel = mongoose.model("officers", officerSchema);
 module.exports = officerModel;
