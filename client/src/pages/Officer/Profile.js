@@ -1,4 +1,3 @@
-import { Button, Col, Form, Input, Row, TimePicker } from "antd";
 import React, { useEffect, useState } from "react";
 import Layout from "../../components/Layout";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,7 +5,7 @@ import { showLoading, hideLoading } from "../../redux/alertsSlice";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";;
-import OfficerForm from './../../components/OfficerForm';
+import OfficerForm from '../../components/OfficerForm';
 import moment from "moment";
 
 function Profile() {
@@ -25,7 +24,7 @@ function Profile() {
                     userId: user._id,
                     timings: [
                         moment(values.timings[0]).format("HH:mm"),
-                        moment(valuse.timings[1]).format("HH:mm"),
+                        moment(values.timings[1]).format("HH:mm"),
                     ],
                 },
                 {
@@ -58,7 +57,7 @@ function Profile() {
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,
-                    }
+                    },
                 }
             );
 

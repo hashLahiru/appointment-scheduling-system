@@ -6,7 +6,6 @@ import { showLoading, hideLoading } from "../redux/alertsSlice";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
-import OfficerForm from "../components/OfficerForm";
 import moment from "moment";
 
 function BookAppointment() {
@@ -111,10 +110,10 @@ function BookAppointment() {
 
     return (
         <Layout>
-            {doctor && (
+            {officer && (
                 <div>
                     <h1 className="page-title">
-                        {officer.firstName} {doctor.lastName}
+                        {officer.firstName} {officer.lastName}
                     </h1>
                     <hr />
                     <Row gutter={20} className="mt-5" align="middle">

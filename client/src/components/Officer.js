@@ -13,12 +13,24 @@ function Officer({officer}) {
             </h1>
             <hr />
             <p>
+                <b>Phone Number :</b>
+                {officer.phoneNumber}
+            </p>
+            <p>
                 <b>Email address : </b>
                 {officer.email}
             </p>
             <p>
+                <b>Address : </b>
+                {officer.address}
+            </p>
+            <p>
                 <b>Department : </b>
                 {officer.department}
+            </p>
+            <p>
+                <b>Position : </b>
+                {officer.position}
             </p>
             <p>
                 <b>Service : </b>
