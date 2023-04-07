@@ -2,21 +2,19 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import { Button } from 'antd';
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 import Home from "./pages/Home";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PublicRoute from "./components/PublicRoute";
 import ApplyOfficer from "./pages/ApplyOfficer";
 import Notifications from "./pages/Notifications";
-import UserList from "./pages/Admin/UsersList";
+import UsersList from "./pages/Admin/UsersList";
 import OfficersList from "./pages/Admin/OfficersList";
 import Profile from "./pages/Officer/Profile";
 import BookAppointment from "./pages/BookAppointment";
 import Appointments from "./pages/Appointments";
 import OfficerAppointments from "./pages/Officer/OfficerAppointments";
-import UsersList from './pages/Admin/UsersList';
 
 function App() {
   const { loading } = useSelector((state) => state.alerts);

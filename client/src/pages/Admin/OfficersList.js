@@ -6,7 +6,7 @@ import { toast } from "react-hot-toast";
 import axios from "axios";
 import { Table } from "antd";
 import moment from "moment";
-import Officer from './../../components/Officer';
+
 
 function OfficersList() {
     const [officers, setOfficers] = useState([]);
