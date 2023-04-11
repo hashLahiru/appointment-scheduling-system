@@ -35,6 +35,7 @@ function App() {
             </PublicRoute>
           }
         />
+
         <Route
           path="/register"
           element={
@@ -59,6 +60,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+        
         <Route
           path="notifications"
           element={
