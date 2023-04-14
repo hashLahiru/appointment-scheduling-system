@@ -1,21 +1,11 @@
 import { Button, Col, Form, Input, Row, TimePicker } from "antd";
-import moment from "moment";
 import React from "react";
 
-function OfficerForm(onFinish, initivalValues) { 
+function OfficerForm(onFinish) { 
     return (
         <Form
             layout="vertical"
             onFinish={onFinish}
-            initialValues={{
-                ...initivalValues,
-                ...(initivalValues && {
-                    timings: [
-                        moment(initivalValues?.timings[0], "HH:mm"),
-                        moment(initivalValues?.timings[1], "HH:mm"),
-                    ],
-                }),
-            }}
         >
             <h1 className="card-title mt-3">Personal Information</h1>
             <Row gutter={20}>
