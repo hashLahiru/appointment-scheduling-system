@@ -23,7 +23,7 @@ function Layout({ children }) {
         },
         {
             name: "Request-officer",
-            path: "/request-officer",
+            path: "/apply-officer",
             icon: "ri-hospital-line",
         }
     ];
