@@ -10,7 +10,7 @@ module.exports = async (req, res, next) => {
                     success: false,
                 });
             } else {
-                req.body.userId = decoded.indexOf;
+                req.body.userId = decoded.id;
                 next();
             }
         });
