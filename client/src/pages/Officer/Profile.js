@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
+import OfficerForm from '../../components/OfficerForm';
+import moment from "moment";
 import Layout from "../../components/Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { showLoading, hideLoading } from "../../redux/alertsSlice";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";;
-import OfficerForm from '../../components/OfficerForm';
-import moment from "moment";
 
 function Profile() {
     const { user } = useSelector((state) => state.user);
