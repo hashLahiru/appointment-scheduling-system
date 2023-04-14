@@ -66,12 +66,12 @@ router.post("/login", async (req, res) => {
 router.post("/get-user-info-by-id", authMiddleware, async (req, res) => {
     try {
         const user = await User.findOne({ _id: req.body.userId });
-        user.password = undefined;
         if (!user) {
             return res
                 .status(200)
                 .send({ message: "User does not exist", success: false });
         } else {
+            user.password = undefined;
             res.status(200).send({
                 success: true,
                 data: user,
@@ -168,7 +168,7 @@ router.post("/delete-all-notifications", authMiddleware, async (req, res) => {
 
 router.get("/get-all-approved-officers", authMiddleware, async (req, res) => {
     try {
-        const officer = await Officer.find({ status: "approved" });
+        const officers = await Officer.find({ status: "approved" });
         res.status(200).status({
             message: "Officers fetched successfully",
             success: true,
