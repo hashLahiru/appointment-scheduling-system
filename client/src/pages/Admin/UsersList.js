@@ -18,10 +18,12 @@ function UsersList() {
                 },
             });
             dispatch(hideLoading());
+            console.log(response.data);
             if (response.data.success) {
                 setUsers(response.data.data);
             }
         } catch (error) {
+            console.log(error);
             dispatch(hideLoading());
         }
     };
@@ -42,7 +44,7 @@ function UsersList() {
         {
             title: "CreatedAt",
             dataIndex: "createdAt",
-            render: (record, text) => moment(record.createdAt).format("DD-MM-YYYY"),
+            render: (record, text) => moment(record?.createdAt).format("DD-MM-YYYY"),
         },
         {
             title: "Actions",

@@ -62,7 +62,7 @@ function App() {
         />
         
         <Route
-          path="notifications"
+          path="/notifications"
           element={
             <ProtectedRoute>
               <Notifications/>
@@ -94,7 +94,7 @@ function App() {
           }
         />
         <Route
-          path="/book-appointment/:doctorId"
+          path="/book-appointment/:officerId"
           element={
             <ProtectedRoute>
               <BookAppointment/>

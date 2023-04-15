@@ -72,11 +72,23 @@ function OfficersList() {
         {
             title: "Created At",
             dataIndex: "createdAt",
-            render: (record, text) => moment(record.createdAt).format("DD-MM-YYYY"),
+            render: (record, text) => moment(record?.createdAt).format("DD-MM-YYYY"),
         },
         {
             title: "Status",
             dataIndex: "status",
+        },
+        {
+            title: 'Department',
+            dataIndex: "department",
+        },
+        {
+            title: "Position",
+            dataIndex: "position",
+        },
+        {
+            title: "Services",
+            dataIndex: "services"
         },
         {
             title: "Actions",

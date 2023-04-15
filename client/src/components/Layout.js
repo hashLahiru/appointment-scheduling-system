@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "../Layout.css";
+import "../layout.css";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import { Badge } from "antd";
@@ -22,10 +22,10 @@ function Layout({ children }) {
             icon: "ri-file-list-line",
         },
         {
-            name: "Request-officer",
-            path: "/request-officer",
+            name: "Apply Officer",
+            path: "/apply-officer",
             icon: "ri-hospital-line",
-        }
+          }
     ];
 
     const officerMenu = [

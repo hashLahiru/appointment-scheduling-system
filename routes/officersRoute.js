@@ -20,7 +20,7 @@ router.post("/get-officer-info-by-user-id", authMiddleware, async (req, res) => 
             .send({ message: "Error getting Officer info", success: false, error });
     }
 });
-
+//  /api/officer/update-officer-profile
 router.post("/get-offcer-info-by-id", authMiddleware, async (req, res) => {
     try {
         const officer = await Officer.findOne({ _id: req.body.officerId });
@@ -60,6 +60,7 @@ router.get(
     async (req, res) => {
         try {
             const officer = await Officer.findOne({ userId: req.body.userId });
+            console.log(officer)
             const appointments = await Appointment.find({ officerId: officer._id });
             res.status(200).send({
                 message: "Appointments fetched successfully",

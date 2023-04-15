@@ -2,7 +2,7 @@ import { Button, Col, Form, Input, Row, TimePicker } from "antd";
 import moment from "moment";
 import React from "react";
 
-function OfficerForm(onFinish, initivalValues) { 
+function OfficerForm({onFinish, initivalValues}) { 
     return (
         <Form
             layout="vertical"
@@ -110,7 +110,17 @@ function OfficerForm(onFinish, initivalValues) {
                         name="timings"
                         rules={[{ required: true }]}
                     >
-                        <TimePicker.RangePicker format="HH:mm"/>
+                        <TimePicker.RangePicker
+                        format="HH:mm"
+                        value={
+                            initivalValues && initivalValues.timings
+                            ? [
+                                moment(initivalValues.timings[0], "HH:mm"),
+                                moment(initivalValues.timings[1], "HH:mm"),
+                                ]
+                            : undefined
+                        }
+                        />
                     </Form.Item>
                 </Col>
             </Row>
