@@ -9,10 +9,11 @@ import moment from "moment";
 function UsersList() {
     const [users, setUsers] = useState([]);
     const dispatch = useDispatch();
+    const backendURL = "http://localhost:5000";
     const getUserData = async () => {
         try {
             dispatch(showLoading());
-            const response = await axios.get("/api/admin/get-all-users", {
+            const response = await axios.get(`${backendURL}/api/admin/get-all-users`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
                 },

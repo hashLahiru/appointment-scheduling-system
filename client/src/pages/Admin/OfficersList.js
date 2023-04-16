@@ -11,10 +11,11 @@ import moment from "moment";
 function OfficersList() {
     const [officers, setOfficers] = useState([]);
     const dispatch = useDispatch();
+    const backendURL = "http://localhost:5000";
     const getOfficersData = async () => {
         try {
             dispatch(showLoading());
-            const response = await axios.get("/api/admin/get-all-officers", {
+            const response = await axios.get(`${backendURL}/api/admin/get-all-officers`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
                 },
@@ -32,7 +33,7 @@ function OfficersList() {
         try {
             dispatch(showLoading());
             const response = await axios.post(
-                "/api/admin/change-officer-account-status",
+                `${backendURL}/api/admin/change-officer-account-status`,
                 { officerId: record._id, userId: record.userId, status: status },
                 {
                     headers: {

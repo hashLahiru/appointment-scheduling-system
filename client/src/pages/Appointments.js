@@ -13,13 +13,13 @@ function Appointments() {
     const backendURL = "http://localhost:5000";
     const getAppointmentsData = async () => {
         try {
-            dispatch(showLoading());
-            const response = await axios.get(`${backendURL}/api/user/get-appointments-by-user-id`, {
+            // dispatch(showLoading());
+            const response = await axios.get(`${backendURL}/api/user/get-appointment-by-user-id`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
                 },
             });
-            dispatch(hideLoading());
+            // dispatch(hideLoading());
             if (response.data.success) {
                 setAppointments(response.data.data);
             }
@@ -35,29 +35,17 @@ function Appointments() {
         {
             title: "Officer",
             dataIndex: "name",
-            render: (text, record) => (
-                <span>
-                    {record.officerInfo.firstName} {record.officerInfo.lastName}
-                </span>
-            ),
+            
         },
         {
             title: "Email",
             dataIndex: "email",
-            render: (text, record) => (
-                <span>
-                    {record.officerInfo.email}
-                </span>
-            ),
+            
         },
         {
             title: "Date & Time",
             dataIndex: "createdAt",
-            render: (text, record) => (
-                <span>
-                    {moment(record.date).format("DD-MM-YYYY")} {moment(record.time).format("HH:mm")}
-                </span>
-            ),
+            
         },
         {
             title: "Status",

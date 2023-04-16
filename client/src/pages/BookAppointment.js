@@ -35,6 +35,8 @@ function BookAppointment() {
 
             // dispatchEvent(hideLoading());
             if (response.data.success) {
+                console.log(response.data.data)
+                console.log(user)
                 setOfficer(response.data.data);
             }
         } catch (error) {
@@ -75,16 +77,15 @@ function BookAppointment() {
     const bookNow = async () => {
         setIsAvailable(false);
         try {
-            dispatchEvent(showLoading());
+            // dispatchEvent(showLoading());
             const response = await axios.post(
                 `${backendURL}/api/user/book-appointment`,
                 {
-                    officerId: params.officerId,
-                    userId: user._id,
-                    officerInfor: officer,
-                    userInfo: user,
-                    date: date,
-                    time: time,
+                    "officerId": params.officerId,
+                    "userId": user._id,
+                   
+                    "date": date,
+                    "time": time,
                 },
                 {
                     headers: {
@@ -93,7 +94,7 @@ function BookAppointment() {
                 }
             );
 
-            dispatchEvent(hideLoading());
+            // dispatchEvent(hideLoading());
             if (response.data.success) {
                 toast.success(response.data.message);
                 navigate('/appointments')

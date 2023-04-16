@@ -15,6 +15,8 @@ function ApplyOfficer() {
     const backendURL = "http://localhost:5000";
     const onFinish = async (values) => {
         try {
+            console.log(moment(values.timings[0]).format("HH:mm"),
+            moment(values.timings[1]).format("HH:mm"))
             dispatch(showLoading());
             const response = await axios.post(
                 `${backendURL}/api/user/apply-officer-account`,

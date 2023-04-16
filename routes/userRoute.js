@@ -193,13 +193,13 @@ router.post("/book-appointment", authMiddleware, async (req, res) => {
         await newAppointment.save();
 
         //pushing notification to officer based on his userId
-        const user = await User.findOne({ _id: req.body.officerInfo.userId });
-        user.unseenNotifications.push({
-            type: "new-appointment-request",
-            message: `A new appointment request has been made by ${req.body.userInfo.name}`,
-            onClickPath: "/officer/appointment",
-        });
-        await user.save();
+        const user = await User.findOne({ _id: req.body.userId });
+        // user.unseenNotifications.push({
+        //     type: "new-appointment-request",
+        //     message: `A new appointment request has been made by ${req.body.userInfo.name}`,
+        //     onClickPath: "/officer/appointment",
+        // });
+        // await user.save();
         res.status(200).send({
             message: "Appointment booked successfully",
             success: true,
