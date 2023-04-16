@@ -9,10 +9,11 @@ import { hideLoading, showLoading } from "../redux/alertsSlice";
 function Register() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const backendURL = "http://localhost:5000";
     const onFinish = async (values) => {
         try {
             dispatch(showLoading());
-            const response = await axios.post("/api/user/register", values);
+            const response = await axios.post(`${backendURL}/api/user/register`, values);
             dispatch(hideLoading());
             if (response.data.success) {
                 toast.success(response.data.message);

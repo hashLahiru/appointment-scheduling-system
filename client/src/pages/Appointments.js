@@ -10,10 +10,11 @@ import moment from 'moment';
 function Appointments() {
     const [appointments, setAppointments] = useState([]);
     const dispatch = useDispatch();
+    const backendURL = "http://localhost:5000";
     const getAppointmentsData = async () => {
         try {
             dispatch(showLoading());
-            const response = await axios.get("/api/user/get-appointments-by-user-id", {
+            const response = await axios.get(`${backendURL}/api/user/get-appointments-by-user-id`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
                 },

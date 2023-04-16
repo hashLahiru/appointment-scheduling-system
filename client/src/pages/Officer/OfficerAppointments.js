@@ -10,11 +10,12 @@ import moment from "moment";
 function OfficerAppointments() {
     const [appointments, setAppointments] = useState([]);
     const dispatch = useDispatch();
+    const backendURL = "http://localhost:5000";
     const getAppointmentsData = async () => {
         try {
             dispatch(showLoading());
             const response = await axios.get(
-                "/api/officer/get-appointments-by-officer-id",
+                `${backendURL}/api/officer/get-appointments-by-officer-id`,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -34,7 +35,7 @@ function OfficerAppointments() {
         try {
             dispatch(showLoading());
             const response = await axios.post(
-                "/api/officer/change-appointment-status",
+                `/api/officer/change-appointment-status`,
                 { appointmentId: record._id, status: status },
                 {
                     headers: {

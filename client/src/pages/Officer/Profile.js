@@ -14,11 +14,12 @@ function Profile() {
     const [officer, setOfficer] = useState(null);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const backendURL = "http://localhost:5000";
     const onFinish = async (values) => {
         try {
             dispatch(showLoading());
             const response = await axios.post(
-                "/api/officer/update-officer-profile",
+                `${backendURL}/api/officer/update-officer-profile`,
                 {
                     ...values,
                     userId: user._id,
@@ -50,7 +51,7 @@ function Profile() {
         try {
             dispatch(showLoading());
             const response = await axios.post(
-                "/api/officer/get-officer-info-by-user-id",
+                `${backendURL}/api/officer/get-officer-info-by-user-id`,
                 {
                     userId: params.userId,
                 },
@@ -79,7 +80,7 @@ function Profile() {
         <Layout>
             <h1 className="page-title"> Officer Profile</h1>
             <hr />
-            {officer && <OfficerForm onFinish={onFinish} initialValues={officer} />}
+            {/* {officer && <OfficerForm onFinish={onFinish} initialValues={officer} />} */}
         </Layout>
     );
 }

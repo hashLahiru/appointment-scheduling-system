@@ -22,7 +22,7 @@ function App() {
     <BrowserRouter>
       {loading && (
         <div className="spinner-parent">
-          <div class="spinner-border" role="status"></div>
+          <div className="spinner-border" role="status"></div>
         </div>
       )}
       <Toaster position="top-center" reverseOrder={false} />

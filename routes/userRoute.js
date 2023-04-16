@@ -93,10 +93,10 @@ router.post("/apply-officer-account", authMiddleware, async (req, res) => {
         const unseenNotifications = adminUser.unseenNotifications;
         unseenNotifications.push({
             type: "new-officer-request",
-            message: `${newofficer.firstName} ${newofficer.lastName} has applied for a officer account`,
+            message: `${newOfficer.firstName} ${newOfficer.lastName} has applied for a officer account`,
             data: {
-                officerId: newofficer._id,
-                name: newofficer.firstName + " " + newofficer.lastName,
+                officerId: newOfficer._id,
+                name: newOfficer.firstName + " " + newOfficer.lastName,
             },
             onClickPath: "/admin/officerslist",
         });
@@ -169,13 +169,13 @@ router.post("/delete-all-notifications", authMiddleware, async (req, res) => {
 router.get("/get-all-approved-officers", authMiddleware, async (req, res) => {
     try {
         const officers = await Officer.find({ status: "approved" });
-        res.status(200).status({
+        console.log(officers)
+        res.status(200).send({
             message: "Officers fetched successfully",
             success: true,
             data: officers,
         });
     } catch (error) {
-        console.log(error);
         res.status(500).send({
             message: "Error applying officer account",
             success: false,

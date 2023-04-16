@@ -12,11 +12,12 @@ function ApplyOfficer() {
     const dispatch = useDispatch();
     const { user } = useSelector((state) => state.user);
     const navigate = useNavigate();
+    const backendURL = "http://localhost:5000";
     const onFinish = async (values) => {
         try {
             dispatch(showLoading());
             const response = await axios.post(
-                "/api/user/apply-officer-account",
+                `${backendURL}/api/user/apply-officer-account`,
                 {
                     ...values,
                     userId: user._id,
