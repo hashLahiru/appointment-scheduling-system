@@ -110,8 +110,11 @@ p{
    justify-content: center;
    background-color: #005555;
 }
+
 .authentication-form{
   width: 400px;
+  background-color: #fff;
+  padding: 15px !important;
 }
 
 .authentication .card-title{

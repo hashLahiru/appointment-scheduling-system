@@ -108,10 +108,10 @@ p{
    display: flex;
    align-items: center;
    justify-content: center;
-   background-color: #005555;
 }
 .authentication-form{
   width: 400px;
+  background-color: #005555;
 }
 
 .authentication .card-title{
