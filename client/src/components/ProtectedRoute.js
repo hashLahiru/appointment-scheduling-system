@@ -10,12 +10,12 @@ function ProtectedRoute(props) {
     const { user } = useSelector((state) => state.user);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
+    const backendURL = "http://localhost:5000";
     const getUser = async () => {
         try {
             dispatch(showLoading())
             const response = await axios.post(
-                "/api/user/get-user-info-by-id",
+                `${backendURL}/api/user/get-user-info-by-id`,
                 { token: localStorage.getItem("token") },
                 {
                     headers: {

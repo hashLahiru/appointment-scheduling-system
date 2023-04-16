@@ -9,16 +9,20 @@ import { showLoading, hideLoading } from "../redux/alertsSlice";
 function Home() {
     const [officers, setOfficers] = useState([]);
     const dispatch = useDispatch();
+    const backendURL = "http://localhost:5000";
+    
     const getData = async () => {
         try {
-            dispatch(showLoading());
-            const response = await axios.get("/api/user/get-all-approved-officers", {
+            // dispatch(showLoading());
+            const response = await axios.get(`${backendURL}/api/user/get-all-approved-officers`, {
                 headers: {
                     Authorization: "Bearer " + localStorage.getItem("token"),
                 },
             });
-            dispatch(hideLoading())
+            // dispatch(hideLoading())
+            console.log(response.data)
             if (response.data.success) {
+                console.log(response.data.data)
                 setOfficers(response.data.data);
             }
         } catch (error) {
@@ -27,16 +31,19 @@ function Home() {
     };
 
     useEffect(() => {
-        getData();
+        getData()
 
-    }, []);
+    });
+    
 
     return (
         <Layout>
             <Row gutter={20}>
+               
                 {officers.map((officer) => (
                     <Col span={8} xs={24} sm={24} lg={8}>
                         <Officer officer={officer} />
+                        
                     </Col>
                 ))}
             </Row>

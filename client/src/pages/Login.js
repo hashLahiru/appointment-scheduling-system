@@ -9,11 +9,13 @@ import { hideLoading, showLoading } from "../redux/alertsSlice";
 function Login() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const backendURL = "http://localhost:5000";
     const onFinish = async (values) => {
         try {
             dispatch(showLoading());
-            const response = await axios.post("/api/user/login", values);
+            const response = await axios.post(`${backendURL}/api/user/login`, values);
             dispatch(hideLoading());
+            console.log("sending..")
             if (response.data.success) {
                 toast.success(response.data.message);
                 localStorage.setItem("token", response.data.data);
@@ -24,6 +26,7 @@ function Login() {
         } catch (error) {
             dispatch(hideLoading());
             toast.error("Something went wrong");
+            console.log(error)
         }
     };
 

@@ -17,12 +17,12 @@ function BookAppointment() {
     const [officer, setOfficer] = useState(null);
     const params = useParams();
     const dipatch = useDispatch();
-
+    const backendURL = "http://localhost:5000";
     const getOfficerData = async () => {
         try {
-            dispatchEvent(showLoading());
+            // dispatchEvent(showLoading());
             const response = await axios.post(
-                "/api/officer/get-officer-info-by-id",
+                `${backendURL}/api/officer/get-offcer-info-by-id`,
                 {
                     officerId: params.officerId,
                 },
@@ -33,7 +33,7 @@ function BookAppointment() {
                 }
             );
 
-            dispatchEvent(hideLoading());
+            // dispatchEvent(hideLoading());
             if (response.data.success) {
                 setOfficer(response.data.data);
             }
@@ -47,7 +47,7 @@ function BookAppointment() {
         try {
             dispatchEvent(showLoading());
             const response = await axios.post(
-                "/api/user/check-booking-availability",
+                `${backendURL}/api/user/check-booking-availability`,
                 {
                     officerId: params.officerId,
                     date: date,
@@ -77,7 +77,7 @@ function BookAppointment() {
         try {
             dispatchEvent(showLoading());
             const response = await axios.post(
-                "/api/user/book-appointment",
+                `${backendURL}/api/user/book-appointment`,
                 {
                     officerId: params.officerId,
                     userId: user._id,
@@ -162,14 +162,14 @@ function BookAppointment() {
                                         setTime(moment(value).format("HH:mm"));
                                     }}
                                 />
-                                {!isAvailable && <Button
+                                {isAvailable && <Button
                                     className="primary-button mt-3  full-width-button"
                                     onClick={checkAvailability}
                                 >
                                     Check Availability
                                 </Button>}
 
-                                {isAvailable && (
+                                {!isAvailable && (
                                     <Button
                                         className="primary-button mt-3 full-width-button"
                                         onClick={bookNow}
