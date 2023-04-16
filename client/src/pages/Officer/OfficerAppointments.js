@@ -35,7 +35,7 @@ function OfficerAppointments() {
         try {
             dispatch(showLoading());
             const response = await axios.post(
-                `/api/officer/change-appointment-status`,
+                `${backendURL}/api/officer/change-appointment-status`,
                 { appointmentId: record._id, status: status },
                 {
                     headers: {

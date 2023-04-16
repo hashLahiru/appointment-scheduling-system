@@ -22,7 +22,6 @@ function Home() {
             // dispatch(hideLoading())
             console.log(response.data)
             if (response.data.success) {
-                console.log(response.data.data)
                 setOfficers(response.data.data);
             }
         } catch (error) {
