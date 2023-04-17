@@ -8,7 +8,7 @@ const userRoute = require("./routes/userRoute");
 const adminRoute = require("./routes/adminRoute");
 const officerRoute = require("./routes/officersRoute");
 const path = require("path");
-const cors = require("cors");
+// const cors = require("cors");
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');

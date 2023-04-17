@@ -29,8 +29,8 @@ function Register() {
 
     return (
         <div className="authentication">
-            <div className="authentication-form card p-3">
-                <h1 className="card-title">Nice to meet you</h1>
+            <div className="authentication-form card card-auth p-3">
+                <h1 className="card-title">You are Welcome!</h1>
                 <Form layout="vertical" onFinish={onFinish}>
                     <Form.Item label="Name" name="name">
                         <Input placeholder="Name"/>
@@ -48,7 +48,7 @@ function Register() {
                     >
                         REGISTER
                     </Button>
-
+                    <br />
                     <Link to="/login" className="anchor mt-2">
                         CLICK HERE TO LOGIN
                     </Link>

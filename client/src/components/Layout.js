@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import "../Layout.css";
+import "../layout.css";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import { Badge } from "antd";
+import { NotificationOutlined } from '@ant-design/icons';
 
 function Layout({ children }) {
     const [collapsed, setCollapsed] = useState(false);
@@ -78,7 +79,7 @@ function Layout({ children }) {
             <div className='d-flex layout'>
                 <div className='sidebar'>
                     <div className="sidebar-header">
-                        <h1 className='logo'>SH</h1>
+                        <h1 className='logo'>Appointment Scheduling System</h1>
                         <h1 className='role'>{role}</h1>
                     </div>
 
@@ -123,14 +124,14 @@ function Layout({ children }) {
                             ></i>
                         )}
 
-                        <div className="d-flex align-items-center px-4">
+                        <div className="d-flex align-items-left px-4">
                             <Badge
                                 count={user?.unseenNotifications.length}
                                 onClick={() => navigate("/notifications")}
                             >
-                                <i className="ri-notification-line header-action-icon px-3"></i>
+                                <NotificationOutlined style={{ fontSize: '32px', color: '#005555' ,cursor: 'pointer'}}/>
                             </Badge>
-
+                            
                             <Link className="anchor mx-2" to="/profile">
                                 {user?.name}
                             </Link>
