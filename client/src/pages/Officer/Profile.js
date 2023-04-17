@@ -67,7 +67,6 @@ function Profile() {
                 setOfficer(response.data.data);
             }
         } catch (error) {
-            console.log(error);
             dispatch(hideLoading());
         }
     };

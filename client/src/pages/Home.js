@@ -20,7 +20,6 @@ function Home() {
                 },
             });
             // dispatch(hideLoading())
-            console.log(response.data)
             if (response.data.success) {
                 setOfficers(response.data.data);
             }
@@ -32,7 +31,7 @@ function Home() {
     useEffect(() => {
         getData()
 
-    });
+    }, []);
     
 
     return (
