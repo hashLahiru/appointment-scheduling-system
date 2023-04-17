@@ -13,18 +13,6 @@ function Officer({officer}) {
             </h1>
             <hr />
             <p>
-                <b>Phone Number :</b>
-                {officer.phoneNumber}
-            </p>
-            <p>
-                <b>Email address : </b>
-                {officer.email}
-            </p>
-            <p>
-                <b>Address : </b>
-                {officer.address}
-            </p>
-            <p>
                 <b>Department : </b>
                 {officer.department}
             </p>
@@ -35,6 +23,18 @@ function Officer({officer}) {
             <p>
                 <b>Service : </b>
                 {officer.services}
+            </p>
+            <p>
+                <b>Phone Number :</b>
+                {officer.phoneNumber}
+            </p>
+            <p>
+                <b>Email address : </b>
+                {officer.email}
+            </p>
+            <p>
+                <b>Address : </b>
+                {officer.address}
             </p>
             <p>
                 <b>Timings : </b>

@@ -112,25 +112,24 @@ function BookAppointment() {
     return (
         <Layout>
             {officer && (
-                <div>
+                <div className="bookappointment">
                     <h1 className="page-title">
                         {officer.firstName} {officer.lastName}
                     </h1>
                     <hr />
-                    <Row gutter={20} className="mt-5" align="middle">
-                        <Col span={8} sm={24} xs={24} lg={8}>
-                            <img
-                                src=""
-                                alt=""
-                                width="100%"
-                                height='400'
-                            />
-                        </Col>
+                    <Row gutter={20} className="mt-5 bookappointment" align="middle">
                         <Col span={8} sm={24} xs={24} lg={8}>
                             <h1 className="normal-text">
                                 <b>Timings :</b> {officer.timings[0]} - {officer.timings[1]}
                             </h1>
-
+                            <p>
+                                <b>Department :</b>
+                                {officer.department}
+                            </p>
+                            <p>
+                                <b>Service :</b>
+                                {officer.services}
+                            </p>
                             <p>
                                 <b>Email :</b>
                                 {officer.email}
@@ -139,14 +138,8 @@ function BookAppointment() {
                                 <b>Address :</b>
                                 {officer.address}
                             </p>
-                            <p>
-                                <p>Department :</p>
-                                {officer.department}
-                            </p>
-                            <p>
-                                <b>Service :</b>
-                                {officer.services}
-                            </p>
+
+
                             <div className="d-flex flex-column pt-2 mt-2">
                                 <DatePicker
                                     format="DD-MM-YYYY"
@@ -163,6 +156,7 @@ function BookAppointment() {
                                         setTime(moment(value).format("HH:mm"));
                                     }}
                                 />
+                                
                                 {isAvailable && <Button
                                     className="primary-button mt-3  full-width-button"
                                     onClick={checkAvailability}
@@ -174,6 +168,7 @@ function BookAppointment() {
                                     <Button
                                         className="primary-button mt-3 full-width-button"
                                         onClick={bookNow}
+
                                     >
                                         Book Now
                                     </Button>

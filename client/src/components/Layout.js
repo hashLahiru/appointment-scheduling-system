@@ -98,6 +98,7 @@ function Layout({ children }) {
                             );
                         })}
                         <div
+                            style={{cursor: "pointer"}}
                             className={`d-flex menu-item`}
                             onClick={() => {
                                 localStorage.clear();
@@ -129,16 +130,16 @@ function Layout({ children }) {
                                 count={user?.unseenNotifications.length}
                                 onClick={() => navigate("/notifications")}
                             >
-                                <NotificationOutlined style={{ fontSize: '32px', color: '#005555' ,cursor: 'pointer'}}/>
+                                <NotificationOutlined style={{ fontSize: '32px', color: '#ffffff' ,cursor: 'pointer'}}/>
                             </Badge>
                             
-                            <Link className="anchor mx-2" to="/profile">
+                            <Link className="anchor mx-2"  to="/profile">
                                 {user?.name}
                             </Link>
                         </div>
                     </div>
 
-                    <div className="body">{children}</div>
+                    <div className="card body">{children}</div>
                 </div>
             </div>
         </div>

@@ -28,7 +28,7 @@
 }
 
 .header{
-    background-color: white;
+    background-color: #044444;
     border-radius: 5px;
     box-shadow: 0 0 2px gray;
     margin-bottom: 20px;
@@ -39,11 +39,10 @@
 }
 
 .body{
-    background-color: white;
+    background-color: #ffff;
     border-radius: 5px;
     box-shadow: 0 0 2px gray;
     height: 82vh;
-    width: 100%;
     overflow-x: scroll !important;
     
 }
