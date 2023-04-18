@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "../Layout.css";
+import "../layout.css";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { Badge } from "antd";
@@ -17,17 +17,17 @@ function Layout({ children }) {
         {
             name: "Home",
             path: "/",
-            icon: "ri-home-line",
+            
         },
         {
             name: "Appointments",
             path: `/appointments`,
-            icon: "ri-file-list-line",
+            
         },
         {
             name: "Apply Officer",
             path: "/apply-officer",
-            icon: "ri-hospital-line",
+            
           }
     ];
 
@@ -35,18 +35,18 @@ function Layout({ children }) {
         {
             name: "Home",
             path: "/",
-            icon: "ri-home-line",
+            
         },
         
         {
             name: "Appointments",
-            path: "/officer/appointments",
-            icon: "ri-file-list-line",
+            path: "/officer/officer-appointments",
+            
         },
         {
             name: "Profile",
             path: `/officer/profile/${user?._id}`,
-            icon: "ri-user-line",
+            
         },
     ];
 
@@ -54,22 +54,17 @@ function Layout({ children }) {
         {
             name: "Home",
             path: "/",
-            icon: "ri-home-line",
+            
         },
         {
             name: "Users",
             path: "/admin/userslist",
-            icon: "ri-user-line",
+            
         },
         {
             name: "Officers",
             path: "/admin/officerslist",
-            icon: "ri-user-star-line",
-        },
-        {
-            name: "Profile",
-            path: "/profile",
-            icon: "ri-user-line",
+            
         },
     ];
 
